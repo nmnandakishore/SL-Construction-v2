@@ -19,6 +19,20 @@ document.addEventListener('DOMContentLoaded', function () {
   setHeroHeight();
   window.addEventListener('resize', setHeroHeight);
 
+  // ===== HEADER TRANSPARENCY ON SCROLL =====
+  var header = document.querySelector('.site-header');
+
+  function updateHeaderBg() {
+    if (window.scrollY < 10) {
+      header.classList.add('transparent');
+    } else {
+      header.classList.remove('transparent');
+    }
+  }
+
+  updateHeaderBg();
+  window.addEventListener('scroll', updateHeaderBg);
+
   // ===== NAV TOGGLE =====
   var navToggle = document.querySelector('.nav-toggle');
   var navLinks = document.querySelector('.nav-links');
