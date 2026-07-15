@@ -562,6 +562,67 @@ section {
   transform: rotate(45deg);
 }
 
+.values-row {
+  display: grid;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 600px) {
+  .values-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .values-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.value-card {
+  background: var(--color-white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(115,100,36,0.1);
+}
+
+.value-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 0.75rem;
+  background: var(--color-cream);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.value-icon svg {
+  width: 22px;
+  height: 22px;
+  color: var(--color-brand-gold);
+}
+
+.value-card h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--color-ink);
+  margin-bottom: 0.5rem;
+}
+
+.value-card p {
+  font-size: 0.85rem;
+  color: var(--color-charcoal);
+  line-height: 1.5;
+}
+
 /* === SERVICES === */
 .services-grid {
   display: grid;
