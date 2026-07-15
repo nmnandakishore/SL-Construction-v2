@@ -345,20 +345,23 @@ a:hover {
 }
 
 .hero-heading {
-  font-family: var(--font-display);
-  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
   color: var(--color-white);
-  line-height: 1.2;
+  line-height: 1.25;
   margin-bottom: 1.5rem;
-  max-width: 600px;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+  max-width: 700px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.6);
 }
 
 @media (min-width: 768px) {
   .hero-heading {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
+}
 
+@media (min-width: 768px) {
   .hero-tagline {
     font-size: 1.1rem;
   }
