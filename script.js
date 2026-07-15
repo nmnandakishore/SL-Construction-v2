@@ -21,15 +21,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ===== HEADER TRANSPARENCY ON SCROLL =====
   var header = document.querySelector('.site-header');
+  var headerLogo = header ? header.querySelector('.logo-img') : null;
 
   function updateHeaderBg() {
     var heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 0;
     var navH = nav ? nav.offsetHeight : 0;
-    // keep transparent while any part of hero is visible below the nav
-    if (window.scrollY + navH < heroBottom) {
-      header.classList.add('transparent');
-    } else {
-      header.classList.remove('transparent');
+    var isTransparent = window.scrollY + navH < heroBottom;
+    header.classList.toggle('transparent', isTransparent);
+    if (headerLogo) {
+      headerLogo.setAttribute('src', isTransparent ? 'assets/images/logo-light.svg' : 'assets/images/logo.svg');
     }
   }
 

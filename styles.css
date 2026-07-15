@@ -128,9 +128,7 @@ a:hover {
     transition: filter 0.3s;
 }
 
-.site-header.transparent .logo-img {
-    filter: brightness(0) invert(1);
-}
+
 
 .logo-tagline {
     font-size: 0.6rem;
