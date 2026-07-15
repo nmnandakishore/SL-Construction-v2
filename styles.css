@@ -993,7 +993,7 @@ section {
 /* === CONTACT === */
 .contact-section {
   position: relative;
-  padding: 5rem 0;
+  padding: 15rem 0 5rem;
 }
 
 .contact-section::before {
@@ -1029,13 +1029,6 @@ section {
 .contact-info {
   color: rgba(255,255,255,0.9);
   font-size: 0.95rem;
-  padding-top: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .contact-info {
-    padding-top: 2.5rem;
-  }
 }
 
 .contact-info p {
