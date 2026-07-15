@@ -291,7 +291,6 @@ a:hover {
   display: flex;
   align-items: center;
   padding-top: var(--nav-height);
-  overflow: hidden;
 }
 
 .hero-bg {
@@ -319,8 +318,14 @@ a:hover {
   z-index: 1;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2rem 1.25rem;
+  padding: 2rem 1.25rem 5rem;
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    padding: 3rem 1.25rem 7rem;
+  }
 }
 
 .hero-logo {

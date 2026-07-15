@@ -1,5 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  // ===== HERO HEIGHT (diagonal bottom-right aligns with viewport bottom-right) =====
+  var hero = document.querySelector('.hero');
+  var nav = document.querySelector('.site-header');
+
+  function setHeroHeight() {
+    if (!hero) return;
+    var vh = window.innerHeight;
+    var navH = nav ? nav.offsetHeight : 0;
+    // clip-path bottom-right is at 85% of hero height
+    // we want that point to be at viewport bottom
+    // 0.85 * heroHeight = vh → heroHeight = vh / 0.85
+    var heroH = Math.ceil(vh / 0.85);
+    hero.style.minHeight = heroH + 'px';
+    hero.style.height = heroH + 'px';
+  }
+
+  setHeroHeight();
+  window.addEventListener('resize', setHeroHeight);
+
   // ===== NAV TOGGLE =====
   var navToggle = document.querySelector('.nav-toggle');
   var navLinks = document.querySelector('.nav-links');
