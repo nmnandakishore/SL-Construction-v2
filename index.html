@@ -182,36 +182,56 @@
       <div class="container">
         <span class="section-label">What We Do</span>
         <h2 class="section-title" id="services-title">Our <span>Services</span></h2>
-        <div class="services-grid">
-          <div class="service-card">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            <h3>Residential Building Construction</h3>
-            <p>Quality homes built with engineering precision and attention to detail.</p>
+        <div class="services-layout">
+          <div class="services-list" role="tablist" aria-label="Services">
+            <button class="service-tab active" role="tab" aria-selected="true" data-service="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <div>
+                <strong>Residential Building Construction</strong>
+                <span>Quality homes built with engineering precision and attention to detail.</span>
+              </div>
+            </button>
+            <button class="service-tab" role="tab" aria-selected="false" data-service="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <div>
+                <strong>Commercial Building Construction</strong>
+                <span>Functional and durable commercial spaces for businesses and institutions.</span>
+              </div>
+            </button>
+            <button class="service-tab" role="tab" aria-selected="false" data-service="2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c.5 0 1 .3 1.3.8l2.8 5.7 6.3.9c.6.1 1.1.6 1.1 1.1 0 .3-.1.6-.3.8l-4.6 4.5 1.1 6.3c0 .1 0 .3 0 .4 0 .6-.5 1.1-1.1 1.1-.3 0-.6-.1-.8-.3L12 18.9l-5.7 3c-.3.2-.5.3-.8.3-.6 0-1.1-.5-1.1-1.1 0-.1 0-.3 0-.4l1.1-6.3-4.6-4.5c-.2-.2-.3-.5-.3-.8 0-.6.5-1 1.1-1.1l6.3-.9 2.8-5.7c.3-.5.8-.8 1.3-.8z"/></svg>
+              <div>
+                <strong>Villa Projects</strong>
+                <span>Modern villa designs tailored to your lifestyle and preferences.</span>
+              </div>
+            </button>
+            <button class="service-tab" role="tab" aria-selected="false" data-service="3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <div>
+                <strong>RCC Structural Works</strong>
+                <span>Reinforced cement concrete structures designed by qualified engineers.</span>
+              </div>
+            </button>
+            <button class="service-tab" role="tab" aria-selected="false" data-service="4">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <strong>Waterproofing Works</strong>
+                <span>Expert waterproofing solutions using proven techniques for lasting protection.</span>
+              </div>
+            </button>
+            <button class="service-tab" role="tab" aria-selected="false" data-service="5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="14 2 18 6 7 17 3 17 3 13 14 2"/><line x1="3" y1="22" x2="21" y2="22"/></svg>
+              <div>
+                <strong>Renovation &amp; Remodeling</strong>
+                <span>Transform existing spaces with quality renovation and remodeling services.</span>
+              </div>
+            </button>
           </div>
-          <div class="service-card">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <h3>Commercial Building Construction</h3>
-            <p>Functional and durable commercial spaces for businesses and institutions.</p>
-          </div>
-          <div class="service-card">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c.5 0 1 .3 1.3.8l2.8 5.7 6.3.9c.6.1 1.1.6 1.1 1.1 0 .3-.1.6-.3.8l-4.6 4.5 1.1 6.3c0 .1 0 .3 0 .4 0 .6-.5 1.1-1.1 1.1-.3 0-.6-.1-.8-.3L12 18.9l-5.7 3c-.3.2-.5.3-.8.3-.6 0-1.1-.5-1.1-1.1 0-.1 0-.3 0-.4l1.1-6.3-4.6-4.5c-.2-.2-.3-.5-.3-.8 0-.6.5-1 1.1-1.1l6.3-.9 2.8-5.7c.3-.5.8-.8 1.3-.8z"/></svg>
-            <h3>Villa Projects</h3>
-            <p>Modern villa designs tailored to your lifestyle and preferences.</p>
-          </div>
-          <div class="service-card">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            <h3>RCC Structural Works</h3>
-            <p>Reinforced cement concrete structures designed by qualified engineers.</p>
-          </div>
-          <div class="service-card">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-            <h3>Waterproofing Works</h3>
-            <p>Expert waterproofing solutions using proven techniques for lasting protection.</p>
-          </div>
-          <div class="service-card">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="14 2 18 6 7 17 3 17 3 13 14 2"/><line x1="3" y1="22" x2="21" y2="22"/></svg>
-            <h3>Renovation &amp; Remodeling</h3>
-            <p>Transform existing spaces with quality renovation and remodeling services.</p>
+          <div class="services-panel" aria-live="polite">
+            <div class="service-image">
+              <img src="assets/images/project-sl-residency-3d-render.jpg" alt="Residential building project by SL Construction" id="serviceImg" loading="lazy">
+            </div>
+            <p class="service-caption" id="serviceCaption">Residential Building Construction — Quality homes built with engineering precision and attention to detail.</p>
           </div>
         </div>
       </div>

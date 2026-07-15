@@ -192,4 +192,36 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+
+  // ===== SERVICES TAB SWITCHING =====
+  var serviceTabs = document.querySelectorAll('.service-tab');
+  var serviceImg = document.getElementById('serviceImg');
+  var serviceCaption = document.getElementById('serviceCaption');
+
+  var serviceData = [
+    { img: 'assets/images/project-sl-residency-3d-render.jpg', caption: 'Residential Building Construction — Quality homes built with engineering precision and attention to detail.' },
+    { img: 'assets/images/hero-building-exterior.jpg', caption: 'Commercial Building Construction — Functional and durable commercial spaces for businesses and institutions.' },
+    { img: 'assets/images/project-villa-exterior-red-roof.jpg', caption: 'Villa Projects — Modern villa designs tailored to your lifestyle and preferences.' },
+    { img: 'assets/images/construction-site-in-progress.jpg', caption: 'RCC Structural Works — Reinforced cement concrete structures designed by qualified engineers.' },
+    { img: 'assets/images/interior-tv-unit-closeup.jpg', caption: 'Waterproofing Works — Expert waterproofing solutions using proven techniques for lasting protection.' },
+    { img: 'assets/images/interior-living-room-tv-unit-wide.jpg', caption: 'Renovation & Remodeling — Transform existing spaces with quality renovation and remodeling services.' }
+  ];
+
+  serviceTabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      serviceTabs.forEach(function (t) {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      var idx = parseInt(tab.getAttribute('data-service'), 10);
+      var data = serviceData[idx];
+      if (data) {
+        serviceImg.setAttribute('src', data.img);
+        serviceImg.setAttribute('alt', data.caption);
+        serviceCaption.textContent = data.caption;
+      }
+    });
+  });
 });
