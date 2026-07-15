@@ -322,17 +322,6 @@ a:hover {
   }
 }
 
-.hero-logo {
-  width: min(90%, 500px);
-  height: auto;
-  margin-bottom: 1.5rem;
-  filter: drop-shadow(0 2px 12px rgba(0,0,0,0.5));
-}
-
-.hero-logo .wordmark {
-  fill: var(--color-white);
-}
-
 .hero-tagline {
   font-family: var(--font-body);
   font-size: 1rem;
@@ -340,7 +329,7 @@ a:hover {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 500;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
   text-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
