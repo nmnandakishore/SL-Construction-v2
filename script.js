@@ -23,7 +23,10 @@ document.addEventListener('DOMContentLoaded', function () {
   var header = document.querySelector('.site-header');
 
   function updateHeaderBg() {
-    if (window.scrollY < 10) {
+    var heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 0;
+    var navH = nav ? nav.offsetHeight : 0;
+    // keep transparent while any part of hero is visible below the nav
+    if (window.scrollY + navH < heroBottom) {
       header.classList.add('transparent');
     } else {
       header.classList.remove('transparent');
