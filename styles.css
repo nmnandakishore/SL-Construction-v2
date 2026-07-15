@@ -309,7 +309,7 @@ a:hover {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(26,26,26,0.75) 0%, rgba(53,55,55,0.5) 100%);
+  background: linear-gradient(to right, rgba(26,26,26,0.85) 0%, rgba(26,26,26,0) 60%);
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
