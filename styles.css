@@ -113,7 +113,7 @@ a:hover {
 }
 
 .logo-img {
-  height: 40px;
+  height: calc(var(--nav-height) * 0.95);
   width: auto;
 }
 
