@@ -326,6 +326,7 @@ a:hover {
   width: min(90%, 500px);
   height: auto;
   margin-bottom: 1.5rem;
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,0.5));
 }
 
 .hero-logo .wordmark {
@@ -340,6 +341,7 @@ a:hover {
   text-transform: uppercase;
   font-weight: 500;
   margin-bottom: 0.75rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
 .hero-heading {
@@ -349,6 +351,7 @@ a:hover {
   line-height: 1.2;
   margin-bottom: 1.5rem;
   max-width: 600px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7);
 }
 
 @media (min-width: 768px) {
