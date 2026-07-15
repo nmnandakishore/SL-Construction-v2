@@ -1029,12 +1029,12 @@ section {
 .contact-info {
   color: rgba(255,255,255,0.9);
   font-size: 0.95rem;
-  padding-left: 1.5rem;
+  padding-top: 1.5rem;
 }
 
 @media (min-width: 768px) {
   .contact-info {
-    padding-left: 2.5rem;
+    padding-top: 2.5rem;
   }
 }
 
