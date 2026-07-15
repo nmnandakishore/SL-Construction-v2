@@ -53,6 +53,9 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       var navHeight = document.querySelector('.site-header').offsetHeight;
       var targetTop = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+      if (target.id === 'contact') {
+        targetTop = target.getBoundingClientRect().top + window.pageYOffset + (target.offsetHeight * 0.1);
+      }
       window.scrollTo({ top: targetTop, behavior: 'smooth' });
     });
   });
