@@ -1019,6 +1019,12 @@ section {
     line-height: 1.7;
 }
 
+/* === PARALLAX === */
+[data-parallax] .container,
+[data-parallax] .hero-content {
+    will-change: transform;
+}
+
 /* === CONTACT === */
 .contact-section {
     position: relative;

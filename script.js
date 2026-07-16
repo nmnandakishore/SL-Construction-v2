@@ -151,6 +151,34 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'ArrowRight') nextImage();
   });
 
+  // ===== PARALLAX SECTIONS =====
+  var parallaxSections = document.querySelectorAll('[data-parallax]');
+  var parallaxTicking = false;
+
+  function updateParallax() {
+    var vh = window.innerHeight;
+
+    parallaxSections.forEach(function (section) {
+      var rect = section.getBoundingClientRect();
+      var center = rect.top + rect.height / 2;
+      var viewCenter = vh / 2;
+      var offset = center - viewCenter;
+      var speed = parseFloat(section.getAttribute('data-parallax')) || 0.05;
+      var target = section.querySelector('.container') || section.querySelector('.hero-content');
+      if (!target) target = section;
+      target.style.transform = 'translateY(' + (offset * speed).toFixed(1) + 'px)';
+    });
+
+    parallaxTicking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!parallaxTicking) {
+      requestAnimationFrame(updateParallax);
+      parallaxTicking = true;
+    }
+  });
+
   // ===== CONTACT FORM → GOOGLE SHEETS =====
   var form = document.getElementById('contactForm');
   var formStatus = document.getElementById('formStatus');
