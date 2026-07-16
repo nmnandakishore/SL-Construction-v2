@@ -159,9 +159,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var scrollY = window.pageYOffset || window.scrollY;
 
     parallaxSections.forEach(function (section) {
+      if (section.id === 'home') return;
       var speed = parseFloat(section.getAttribute('data-parallax')) || 0;
-      var target = section.querySelector('.container') || section.querySelector('.hero-content');
-      if (!target) target = section;
+      var target = section.querySelector('.container');
+      if (!target) return;
       target.style.transform = 'translateY(' + (scrollY * speed * 0.001).toFixed(1) + 'px)';
     });
 

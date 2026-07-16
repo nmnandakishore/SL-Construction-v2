@@ -351,7 +351,6 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
 @media (min-width: 768px) {
