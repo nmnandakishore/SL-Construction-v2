@@ -272,3 +272,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// ===== PARALLAX SECTIONS (outside DOMContentLoaded for reliability) =====
+(function () {
+  var parallaxSections = document.querySelectorAll("[data-parallax]");
+
+  function updateParallax() {
+    var vh = window.innerHeight;
+    parallaxSections.forEach(function (section) {
+      var speed = parseFloat(section.getAttribute("data-parallax")) || 0;
+      if (!speed) return;
+      var target = section.querySelector(".container") || section.querySelector(".hero-content");
+      if (!target) target = section;
+      var rect = section.getBoundingClientRect();
+      var enterDist = vh - rect.bottom;
+      if (enterDist < 0) enterDist = 0;
+      var translateY = Math.min(enterDist * 0.5, speed);
+      target.style.transform = "translateY(" + translateY.toFixed(1) + "px)";
+    });
+  }
+
+  updateParallax();
+  window.addEventListener("scroll", updateParallax);
+})();
