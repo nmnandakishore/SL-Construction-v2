@@ -186,30 +186,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.key === "ArrowRight") nextImage();
   });
 
-  // ===== PARALLAX SECTIONS =====
-  var parallaxSections = document.querySelectorAll("[data-parallax]");
-
-  function updateParallax() {
-    var vh = window.innerHeight;
-
-    parallaxSections.forEach(function (section) {
-      var speed = parseFloat(section.getAttribute("data-parallax")) || 0;
-      if (!speed) return;
-      var target =
-        section.querySelector(".container") ||
-        section.querySelector(".hero-content");
-      if (!target) target = section;
-      var rect = section.getBoundingClientRect();
-      var enterDist = vh - rect.bottom;
-      if (enterDist < 0) enterDist = 0;
-      var translateY = Math.min(enterDist * 0.5, speed);
-      target.style.transform = "translateY(" + translateY.toFixed(1) + "px)";
-    });
-  }
-
-  updateParallax();
-  window.addEventListener("scroll", updateParallax);
-
   // ===== CONTACT FORM → GOOGLE SHEETS =====
   var form = document.getElementById("contactForm");
   var formStatus = document.getElementById("formStatus");
@@ -273,9 +249,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// ===== PARALLAX SECTIONS (outside DOMContentLoaded for reliability) =====
+// ===== PARALLAX SECTIONS =====
 (function () {
   var parallaxSections = document.querySelectorAll("[data-parallax]");
+  if (!parallaxSections.length) {
+    document.body.style.border = "5px solid red";
+    return;
+  }
+  document.body.style.outline = "5px solid lime";
 
   function updateParallax() {
     var vh = window.innerHeight;
@@ -287,11 +268,13 @@ document.addEventListener("DOMContentLoaded", function () {
       var rect = section.getBoundingClientRect();
       var enterDist = vh - rect.bottom;
       if (enterDist < 0) enterDist = 0;
-      var translateY = Math.min(enterDist * 0.5, speed);
+      var frac = Math.min(enterDist / vh, 1);
+      var translateY = frac * speed;
       target.style.transform = "translateY(" + translateY.toFixed(1) + "px)";
     });
   }
 
   updateParallax();
   window.addEventListener("scroll", updateParallax);
+  window.addEventListener("resize", updateParallax);
 })();
