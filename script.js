@@ -78,13 +78,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var startY = window.pageYOffset;
     var diff = targetY - startY;
     var startTime = Date.now();
-    var interval = setInterval(function () {
-      var elapsed = Date.now() - startTime;
-      var t = Math.min(elapsed / duration, 1);
+    function step() {
+      var t = Math.min((Date.now() - startTime) / duration, 1);
       var ease = 1 - Math.pow(1 - t, 3);
       window.scrollTo(0, Math.round(startY + diff * ease));
-      if (t >= 1) clearInterval(interval);
-    }, 16);
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
   }
 
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
           window.pageYOffset +
           target.offsetHeight * 0.1;
       }
-      animateScroll(targetTop, 1800);
+      animateScroll(targetTop, 3000);
     });
   });
   });
