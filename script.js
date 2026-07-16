@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
       window.scrollTo(0, Math.round(startY + diff * ease));
       if (t < 1) requestAnimationFrame(step);
     }
-    requestAnimationFrame(step);
+    step();
   }
 
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
