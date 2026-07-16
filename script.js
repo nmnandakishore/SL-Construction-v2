@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
           window.pageYOffset +
           target.offsetHeight * 0.1;
       }
-      animateScroll(targetTop, 3000);
+      animateScroll(targetTop, 1800);
     });
   });
 
