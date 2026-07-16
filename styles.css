@@ -351,7 +351,6 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
 @media (min-width: 768px) {
@@ -456,10 +455,12 @@ a:hover {
 }
 
 .trust-item {
+    position: relative;
     text-align: center;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.08);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     border-radius: 6px;
 }
 
@@ -1254,8 +1255,8 @@ section {
 .site-footer .logo-img {
     display: block;
     height: 56px;
-    margin: 1rem auto;
-    transform: translateX(-50px);
+    margin: 0 auto 1.5rem;
+    transform: translateX(-7px);
     opacity: 0.8;
 }
 
