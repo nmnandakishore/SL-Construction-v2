@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var startY = window.pageYOffset;
     var diff = targetY - startY;
     var startTime = performance.now();
-    var easing = cubicBezier(0.42, 0, 0.12, 1);
+    var easing = cubicBezier(0.3, 0, 0.3, 1);
     function step(now) {
       var prog = Math.min((now - startTime) / duration, 1);
       window.scrollTo(0, startY + diff * easing(prog));
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
           window.pageYOffset +
           target.offsetHeight * 0.1;
       }
-      animateScroll(targetTop, 1200);
+      animateScroll(targetTop, 1500);
     });
   });
 
