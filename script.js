@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var startTime = performance.now();
     function step(now) {
       var t = Math.min((now - startTime) / duration, 1);
-      var ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      var ease = 1 - Math.pow(1 - t, 3);
       window.scrollTo(0, startY + diff * ease);
       if (t < 1) requestAnimationFrame(step);
     }
