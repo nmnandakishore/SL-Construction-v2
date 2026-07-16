@@ -534,11 +534,20 @@ section {
 }
 #team {
     position: relative;
-    z-index: 7;
+    z-index: 6;
 }
 #contact {
     position: relative;
-    z-index: 6;
+    z-index: 7;
+}
+
+.contact-section::before {
+    position: relative;
+    z-index: 7;
+}
+
+.site-footer {
+    z-index: 8;
 }
 
 /* === ABOUT === */
@@ -1056,10 +1065,24 @@ section {
 /* === CONTACT === */
 .contact-section {
     position: relative;
-    padding: 15rem 0 5rem;
+    padding: 0 5rem;
+    padding-bottom: 5rem;
+    background: var(--color-charcoal);
 }
 
-.contact-section::before {
+.contact-diagonal-section {
+    width: 100%;
+}
+/*.contact-diagonal-section.shape-1 {
+}*/
+
+.contact-diagonal-section .shape-2 {
+    height: 150px;
+    width: 100%;
+    position: relative;
+    background-color: #fafafa;
+}
+.contact-diagonal-section .shape-2::before {
     content: "";
     position: absolute;
     top: 0;
@@ -1067,8 +1090,8 @@ section {
     width: 100%;
     height: 100%;
     background: var(--color-charcoal);
-    clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
-    z-index: 0;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
+    z-index: 8;
 }
 
 .contact-section .container {
@@ -1219,6 +1242,7 @@ section {
 
 /* === FOOTER === */
 .site-footer {
+    position: relative;
     background: var(--color-ink);
     color: rgba(255, 255, 255, 0.7);
     padding: 2rem 0;
@@ -1228,8 +1252,10 @@ section {
 }
 
 .site-footer .logo-img {
+    display: block;
     height: 56px;
-    margin: 0 -20px auto 1rem;
+    margin: 1rem auto;
+    transform: translateX(-50px);
     opacity: 0.8;
 }
 
