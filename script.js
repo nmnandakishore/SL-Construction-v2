@@ -77,14 +77,14 @@ document.addEventListener("DOMContentLoaded", function () {
   function animateScroll(targetY, duration) {
     var startY = window.pageYOffset;
     var diff = targetY - startY;
-    var startTime = performance.now();
-    function step(now) {
-      var t = Math.min((now - startTime) / duration, 1);
+    var startTime = Date.now();
+    var interval = setInterval(function () {
+      var elapsed = Date.now() - startTime;
+      var t = Math.min(elapsed / duration, 1);
       var ease = 1 - Math.pow(1 - t, 3);
-      window.scrollTo(0, startY + diff * ease);
-      if (t < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
+      window.scrollTo(0, Math.round(startY + diff * ease));
+      if (t >= 1) clearInterval(interval);
+    }, 16);
   }
 
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
@@ -103,8 +103,9 @@ document.addEventListener("DOMContentLoaded", function () {
           window.pageYOffset +
           target.offsetHeight * 0.1;
       }
-      window.scrollTo({ top: targetTop, behavior: "instant" });
+      animateScroll(targetTop, 1800);
     });
+  });
   });
 
   // ===== LIGHTBOX =====
