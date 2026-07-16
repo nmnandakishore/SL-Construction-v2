@@ -512,6 +512,13 @@ section {
     background: #fafafa;
 }
 
+#home { position: relative; z-index: 1; }
+#about { position: relative; z-index: 2; }
+#services { position: relative; z-index: 3; }
+#projects { position: relative; z-index: 4; }
+#team { position: relative; z-index: 5; }
+#contact { position: relative; z-index: 6; }
+
 /* === ABOUT === */
 .about-grid {
     display: grid;
