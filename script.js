@@ -74,6 +74,39 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // ===== SMOOTH SCROLL (anchor offset) =====
+  function cubicBezier(p1x, p1y, p2x, p2y) {
+    var cx = 3 * p1x;
+    var bx = 3 * (p2x - p1x) - cx;
+    var ax = 1 - cx - bx;
+    var cy = 3 * p1y;
+    var by = 3 * (p2y - p1y) - cy;
+    var ay = 1 - cy - by;
+    return function (t) {
+      var prev = 0, next = 1, mid, x;
+      for (var i = 0; i < 12; i++) {
+        mid = (prev + next) / 2;
+        x = ((ax * mid + bx) * mid + cx) * mid;
+        if (x < t) prev = mid;
+        else next = mid;
+      }
+      mid = (prev + next) / 2;
+      return ((ay * mid + by) * mid + cy) * mid;
+    };
+  }
+
+  function animateScroll(targetY, duration) {
+    var startY = window.pageYOffset;
+    var diff = targetY - startY;
+    var startTime = performance.now();
+    var easing = cubicBezier(0.42, 0, 0.12, 1);
+    function step(now) {
+      var prog = Math.min((now - startTime) / duration, 1);
+      window.scrollTo(0, startY + diff * easing(prog));
+      if (prog < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener("click", function (e) {
       var target = document.querySelector(this.getAttribute("href"));
@@ -88,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
           window.pageYOffset +
           target.offsetHeight * 0.1;
       }
-      window.scrollTo({ top: targetTop, behavior: "smooth" });
+      animateScroll(targetTop, 1200);
     });
   });
 
