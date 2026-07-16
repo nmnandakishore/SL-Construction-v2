@@ -175,6 +175,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var parallaxTicking = false;
 
   function updateParallax() {
+    var vh = window.innerHeight;
+
     parallaxSections.forEach(function (section) {
       var speed = parseFloat(section.getAttribute("data-parallax")) || 0;
       var target =
@@ -182,10 +184,10 @@ document.addEventListener("DOMContentLoaded", function () {
         section.querySelector(".hero-content");
       if (!target) target = section;
       var rect = section.getBoundingClientRect();
-      var exitDist = -rect.top;
-      if (exitDist < 0) exitDist = 0;
+      var enterDist = vh - rect.bottom;
+      if (enterDist < 0) enterDist = 0;
       var maxTranslate = speed;
-      var translateY = Math.min(exitDist * 0.2, maxTranslate);
+      var translateY = Math.min(enterDist * 0.2, maxTranslate);
       target.style.transform = "translateY(" + translateY.toFixed(1) + "px)";
     });
 
