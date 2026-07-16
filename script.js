@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var rect = section.getBoundingClientRect();
       var enterDist = vh - rect.bottom;
       if (enterDist < 0) enterDist = 0;
-      var translateY = Math.min(enterDist * 0.3, speed);
+      var translateY = Math.min(enterDist * 0.5, speed);
       target.style.transform = "translateY(" + translateY.toFixed(1) + "px)";
     });
   }
