@@ -156,21 +156,19 @@ document.addEventListener('DOMContentLoaded', function () {
   var parallaxTicking = false;
 
   function updateParallax() {
-    var vh = window.innerHeight;
+    var scrollY = window.pageYOffset || window.scrollY;
 
     parallaxSections.forEach(function (section) {
-      var rect = section.getBoundingClientRect();
-      var center = rect.top + rect.height / 2;
-      var viewCenter = vh / 2;
-      var offset = center - viewCenter;
-      var speed = parseFloat(section.getAttribute('data-parallax')) || 0.05;
+      var speed = parseFloat(section.getAttribute('data-parallax')) || 0;
       var target = section.querySelector('.container') || section.querySelector('.hero-content');
       if (!target) target = section;
-      target.style.transform = 'translateY(' + (offset * speed).toFixed(1) + 'px)';
+      target.style.transform = 'translateY(' + (scrollY * speed * 0.001).toFixed(1) + 'px)';
     });
 
     parallaxTicking = false;
   }
+
+  updateParallax();
 
   window.addEventListener('scroll', function () {
     if (!parallaxTicking) {
