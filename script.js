@@ -188,13 +188,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ===== PARALLAX SECTIONS =====
   var parallaxSections = document.querySelectorAll("[data-parallax]");
-  var parallaxTicking = false;
 
   function updateParallax() {
     var vh = window.innerHeight;
 
     parallaxSections.forEach(function (section) {
       var speed = parseFloat(section.getAttribute("data-parallax")) || 0;
+      if (!speed) return;
       var target =
         section.querySelector(".container") ||
         section.querySelector(".hero-content");
@@ -202,22 +202,13 @@ document.addEventListener("DOMContentLoaded", function () {
       var rect = section.getBoundingClientRect();
       var enterDist = vh - rect.bottom;
       if (enterDist < 0) enterDist = 0;
-      var maxTranslate = speed;
-      var translateY = Math.min(enterDist * 0.2, maxTranslate);
+      var translateY = Math.min(enterDist * 0.3, speed);
       target.style.transform = "translateY(" + translateY.toFixed(1) + "px)";
     });
-
-    parallaxTicking = false;
   }
 
   updateParallax();
-
-  window.addEventListener("scroll", function () {
-    if (!parallaxTicking) {
-      requestAnimationFrame(updateParallax);
-      parallaxTicking = true;
-    }
-  });
+  window.addEventListener("scroll", updateParallax);
 
   // ===== CONTACT FORM → GOOGLE SHEETS =====
   var form = document.getElementById("contactForm");
