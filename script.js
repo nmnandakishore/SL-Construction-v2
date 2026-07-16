@@ -106,7 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
       animateScroll(targetTop, 3000);
     });
   });
-  });
 
   // ===== LIGHTBOX =====
   var lightbox = document.getElementById("lightbox");
@@ -252,11 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // ===== PARALLAX SECTIONS =====
 (function () {
   var parallaxSections = document.querySelectorAll("[data-parallax]");
-  if (!parallaxSections.length) {
-    document.body.style.border = "5px solid red";
-    return;
-  }
-  document.body.style.outline = "5px solid lime";
+  if (!parallaxSections.length) return;
 
   function updateParallax() {
     var vh = window.innerHeight;
