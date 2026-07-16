@@ -269,7 +269,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  var ticking = false;
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      updateParallax();
+      ticking = false;
+    });
+  }
+
   updateParallax();
-  window.addEventListener("scroll", updateParallax);
+  window.addEventListener("scroll", onScroll);
   window.addEventListener("resize", updateParallax);
 })();
